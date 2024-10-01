@@ -1,0 +1,32 @@
+{
+  "devDependencies": {
+    "@cspell/eslint-plugin": "^8.14.4",
+    "@faker-js/faker": "^9.0.3",
+    "@types/jest": "^29.5.13",
+    "cspell": "^8.14.4",
+    "eslint": "^9.11.1",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "typescript-eslint": "^8.8.0"
+  },
+  "dependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0"
+  },
+  "scripts": {
+    "test": "jest --verbose --coverage=true  --watchAll=false --detectOpenHandles",
+    "dev": "nodemon",
+    "start": "ts-node src/main.ts",
+    "lint": "eslint . --fix",
+    "coverage": "nyc --reporter=lcov  npm run test",
+    "startdb": "docker-compose -f ./tests/docker-compose.yaml up -d ",
+    "stopdb": "docker-compose -f ./tests/docker-compose.yaml down",
+    "fta": "fta ./src --config-path ./fta.json",
+    "build": "tsc --build"
+  }
+}

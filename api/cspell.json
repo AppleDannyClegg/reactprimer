@@ -1,0 +1,16 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": ["customword", "anotherword", "dotenvx"],
+  "ignoreWords": ["spellingmistake", "anothermistake", "Luxon", "Clegg", "dotenvx", "Mikro", "MikroORM"],
+  "dictionaries": ["typescript", "node"],
+  "dictionaryDefinitions": [
+    {
+      "name": "project-words",
+      "path": "./project-words.txt",
+      "addWords": true
+    }
+  ],
+  "ignorePaths": ["**/node_modules/**", "**/dist/**", "**/build/**"],
+  "files": ["**/*.ts", "**/*.json"]
+}

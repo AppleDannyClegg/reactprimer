@@ -1,0 +1,5 @@
+{
+  "watch": ["src", "tests", "./", "src/entities"],
+  "ext": "js,mjs,ts,json,.env",
+  "exec": " npm run lint ; npm run test -- --silent=false ; npm run start "
+}
