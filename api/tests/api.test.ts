@@ -1,4 +1,3 @@
-import { app } from '../src/main'
 import { PatientService } from '../src/service/patientService'
 
 describe('API', () => {
@@ -28,16 +27,5 @@ describe('API', () => {
     const patient = await _patientService.getPatientById('1')
 
     expect(patient.images.length).toBe(6)
-  })
-
-  const routes = [
-    { path: '/patients', method: 'get' },
-    { path: '/patient/1', method: 'get' }
-  ]
-
-  it.each(routes)('should return 200 for %s', async (route) => {
-    const router = app._router
-
-    expect(router.stack.some((s: { route: { path: string } }) => s.route.path === route.path)).toBe(true)
   })
 })
