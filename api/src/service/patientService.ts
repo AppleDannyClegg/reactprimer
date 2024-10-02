@@ -13,19 +13,19 @@ export class PatientService {
       phone: faker.phone.number(),
       email: faker.internet.email(),
       images: [
-        faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'medical' }),
-        faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'medical' }),
-        faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'medical' }),
-        faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'medical' }),
-        faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'medical' }),
-        faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'medical' })
+        faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'xray' }),
+        faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'xray' }),
+        faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'xray' }),
+        faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'xray' }),
+        faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'xray' }),
+        faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'xray' })
       ]
     }
   }
 
   async getPatients(): Promise<IPatientApiResponse> {
     const patients = [] as IPatient[]
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 12; i++) {
       const patient = {
         id: faker.string.uuid(),
         name: faker.person.fullName(),
@@ -34,12 +34,12 @@ export class PatientService {
         phone: faker.phone.number(),
         email: faker.internet.email(),
         images: [
-          faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'medical' }),
-          faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'medical' }),
-          faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'medical' }),
-          faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'medical' }),
-          faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'medical' }),
-          faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'medical' })
+          faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'bones' }),
+          faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'xray' }),
+          faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'xray' }),
+          faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'xray' }),
+          faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'xray' }),
+          faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'xray' })
         ]
       }
       patients.push(patient)

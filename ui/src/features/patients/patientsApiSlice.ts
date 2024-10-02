@@ -33,7 +33,18 @@ export const patientApiSlice = createApi({
       query: id => `patient/${id}`,
       providesTags: (result, error, id) => [{ type: "Patients", id }],
     }),
+    postPatient: build.mutation<void, Partial<void>>({
+      query: patient => ({
+        url: `patients`,
+        method: "POST",
+      }),
+      invalidatesTags: [{ type: "Patients" }],
+    }),
   }),
 })
 
-export const { useGetPatientsQuery, useGetPatientQuery } = patientApiSlice
+export const {
+  useGetPatientsQuery,
+  useGetPatientQuery,
+  usePostPatientMutation,
+} = patientApiSlice

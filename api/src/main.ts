@@ -5,7 +5,7 @@ import { IPatient } from './interfaces/patient'
 import { IPatientApiResponse } from './interfaces/patientApiResponse'
 import { PatientService } from './service/patientService'
 
-const app = express()
+export const app = express()
 app.use(cors())
 const port = 3000
 

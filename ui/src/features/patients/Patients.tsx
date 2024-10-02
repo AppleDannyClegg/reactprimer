@@ -1,14 +1,20 @@
 import { useEffect, useState } from "react"
+import { Button } from "react-bootstrap"
 import { Image } from "../image/Image"
 import type { IPatientApiResponse } from "./patientsApiSlice"
-import { useGetPatientsQuery } from "./patientsApiSlice"
+import { useGetPatientsQuery, usePostPatientMutation } from "./patientsApiSlice"
 
 export const Patients = () => {
   const { data, isError, isLoading, isSuccess } = useGetPatientsQuery(10)
+  const [postPatient] = usePostPatientMutation()
 
   return (
     <div>
-      <h2>Current Patients</h2>
+      <h2>Current Patients RTX Query</h2>
+
+      <Button variant="primary" onClick={() => postPatient()}>
+        Refresh
+      </Button>
 
       {isLoading && <div>Loading...</div>}
 
@@ -55,6 +61,7 @@ export const PatientsOld = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [isError, setIsError] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [refresh, setRefresh] = useState(false)
 
   useEffect(() => {
     fetch("http://localhost:3000/patients")
@@ -66,11 +73,16 @@ export const PatientsOld = () => {
         setIsSuccess(true)
         setIsError(false)
       })
-  }, [])
+  }, [refresh])
 
   return (
     <div>
-      <h2>Current Patients</h2>
+      <h2>Current Patients Old Style</h2>
+
+      <Button variant="primary" onClick={() => setRefresh(!refresh)}>
+        Refresh
+      </Button>
+
       {isLoading && <div>Loading...</div>}
 
       {isError && <div>Something went wrong</div>}
