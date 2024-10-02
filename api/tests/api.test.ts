@@ -36,8 +36,8 @@ describe('API', () => {
   ]
 
   it.each(routes)('should return 200 for %s', async (route) => {
+    const router = app._router
 
-    const router = app._router;
-
-    expect(router.stack.some((s) => s.route.path === route.path)).toBe(true);expect(router.stack.some((s) => s.route.path === route.path)).toBe(true);
+    expect(router.stack.some((s: { route: { path: string } }) => s.route.path === route.path)).toBe(true)
+  })
 })
