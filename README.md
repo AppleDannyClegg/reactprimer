@@ -33,3 +33,11 @@ This should open a browser window and the app should be running.
 ## Possible issues
 
 The api runs on port 3000 and the UI used 5173 is these ports are in use the solution will fail to run.
+
+## Tests
+
+In both projects to run tests use
+
+```
+npm run test
+```
