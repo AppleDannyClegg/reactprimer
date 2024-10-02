@@ -16,7 +16,8 @@
     "@types/express": "^5.0.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "express": "^4.21.0"
+    "express": "^4.21.0",
+    "nodemon": "^3.1.7"
   },
   "scripts": {
     "test": "jest --verbose --coverage=true  --watchAll=false --detectOpenHandles",
