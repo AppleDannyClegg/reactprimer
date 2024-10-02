@@ -47,7 +47,7 @@ export class PatientService {
 
     const response: IPatientApiResponse = {
       patients: patients,
-      total: 10,
+      total: patients.length,
       skip: 0,
       limit: 10
     }
