@@ -2,8 +2,8 @@ import { useEffect, useState } from "react"
 import { Button } from "react-bootstrap"
 import { Image } from "../image/Image"
 
-import { useGetPatientsQuery, usePostPatientMutation } from "./patientsApiSlice"
 import { IPatientApiResponse } from "../../interfaces/patientApiResponse"
+import { useGetPatientsQuery, usePostPatientMutation } from "./patientsApiSlice"
 
 export const PatientsOld = () => {
   const [patients, setPatients] = useState<IPatientApiResponse>()
@@ -21,6 +21,11 @@ export const PatientsOld = () => {
         setIsLoading(false)
         setIsSuccess(true)
         setIsError(false)
+      })
+      .catch(() => {
+        setIsLoading(false)
+        setIsSuccess(false)
+        setIsError(true)
       })
   }, [refresh])
 

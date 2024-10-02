@@ -1,11 +1,7 @@
-// Need to use the React-specific entry point to import `createApi`
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
-import { IPatientApiResponse } from "../../interfaces/patientApiResponse"
 import { IPatient } from "../../interfaces/patient"
+import { IPatientApiResponse } from "../../interfaces/patientApiResponse"
 
-
-
-// Define a service using a base URL and expected endpoints
 export const patientApiSlice = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3000" }),
   reducerPath: "patientApi",
