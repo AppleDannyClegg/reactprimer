@@ -6,11 +6,12 @@ const App = () => {
   return (
     <div className="container">
       <header className="App-header">
+      <PatientsOld />
+
+        <br></br>
+        <br></br>
+        <br></br>
         <Patients />
-        <br></br>
-        <br></br>
-        <br></br>
-        <PatientsOld />
       </header>
     </div>
   )

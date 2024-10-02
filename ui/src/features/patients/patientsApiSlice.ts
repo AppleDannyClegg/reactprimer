@@ -1,22 +1,9 @@
 // Need to use the React-specific entry point to import `createApi`
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
+import { IPatientApiResponse } from "../../interfaces/patientApiResponse"
+import { IPatient } from "../../interfaces/patient"
 
-export interface IPatient {
-  id: string
-  name: string
-  age: number
-  address: string
-  phone: string
-  email: string
-  images: string[]
-}
 
-export interface IPatientApiResponse {
-  patients: IPatient[]
-  total: number
-  skip: number
-  limit: number
-}
 
 // Define a service using a base URL and expected endpoints
 export const patientApiSlice = createApi({
