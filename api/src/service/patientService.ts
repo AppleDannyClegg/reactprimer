@@ -25,7 +25,14 @@ export class PatientService {
 
   async getPatients(): Promise<IPatientApiResponse> {
     const patients = [] as IPatient[]
+
     for (let i = 0; i < 12; i++) {
+      const images = [] as string[]
+
+      for (let i = 0; i < Math.random() * 10; i++) {
+        images.push(faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'xray' }))
+      }
+
       const patient = {
         id: faker.string.uuid(),
         name: faker.person.fullName(),
@@ -33,14 +40,7 @@ export class PatientService {
         address: faker.location.streetAddress(),
         phone: faker.phone.number(),
         email: faker.internet.email(),
-        images: [
-          faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'bones' }),
-          faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'xray' }),
-          faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'xray' }),
-          faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'xray' }),
-          faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'xray' }),
-          faker.image.urlLoremFlickr({ width: 200, height: 200, category: 'xray' })
-        ]
+        images: images
       }
       patients.push(patient)
     }

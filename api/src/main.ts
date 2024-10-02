@@ -23,8 +23,6 @@ app.get('/patient/:id', async (req: Request, res: Response<IPatient>) => {
 app.get('/patients/', async (req: Request, res: Response<IPatientApiResponse>) => {
   const patients = await patientService.getPatients()
 
-  console.log(patients)
-
   res.json(patients)
 })
 
