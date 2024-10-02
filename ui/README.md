@@ -1,27 +1,35 @@
-# vite-template-redux
+# React Primer 
 
-Uses [Vite](https://vitejs.dev/), [Vitest](https://vitest.dev/), and [React Testing Library](https://github.com/testing-library/react-testing-library) to create a modern [React](https://react.dev/) app compatible with [Create React App](https://create-react-app.dev/)
 
-```sh
-npx degit reduxjs/redux-templates/packages/vite-template-redux my-app
+## Running in dev mode
+
+Open two terminal windows on WSL
+
+Go into the api directory
+
+``` 
+cd ./ui
+npm i
+npm run dev
+
 ```
 
-## Goals
+Go back to the root
 
-- Easy migration from Create React App or Vite
-- As beginner friendly as Create React App
-- Optimized performance compared to Create React App
-- Customizable without ejecting
+``` 
+cd ../
+```
 
-## Scripts
+Then go into the ui directory
 
-- `dev`/`start` - start dev server and open browser
-- `build` - build for production
-- `preview` - locally preview production build
-- `test` - launch test runner
+```
+cd ./ui
+npm i
+npm run dev
+```
 
-## Inspiration
+This should open a browser window and the app should be running. 
 
-- [Create React App](https://github.com/facebook/create-react-app/tree/main/packages/cra-template)
-- [Vite](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react)
-- [Vitest](https://github.com/vitest-dev/vitest/tree/main/examples/react-testing-lib)
+## Possible issues
+
+The api runs on port 3000 and the UI used 5173 is these ports are in use the solution will fail to run.
